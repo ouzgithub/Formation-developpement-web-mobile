@@ -30,4 +30,9 @@ public class EtudiantController {
     public List<Etudiant> getEtudiant(){
       return this.etudiantService.getEtudiant();
     }
+
+    @GetMapping(path = "getEtudiant/{id}",produces = APPLICATION_JSON_VALUE)
+    public Etudiant getEtudiant(@PathVariable int id){
+        return this.etudiantService.getEtudiant(id);
+    }
 }
