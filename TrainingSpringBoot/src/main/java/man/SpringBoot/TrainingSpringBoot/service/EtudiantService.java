@@ -5,6 +5,8 @@ import man.SpringBoot.TrainingSpringBoot.repository.EtudiantRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Service
 public class EtudiantService {
     private EtudiantRepository etudiantRepository;
@@ -18,4 +20,7 @@ public class EtudiantService {
         this.etudiantRepository.save(etudiant);
     }
 
+    public List<Etudiant> getEtudiant(){
+        return this.etudiantRepository.findAll();
+    }
 }
